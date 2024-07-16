@@ -4,7 +4,7 @@ This repository contains a Python implementation of an analytical expression for
 
 ## Background
 
-![wake](./images/wake.png)
+![wake](./images/wake.PNG)
 
 For a set of axes $y_n$ - $z_n$ placed at the center of the wake, the normalised wind-speed deficit here is defined as
 
