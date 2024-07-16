@@ -21,7 +21,7 @@ $$\xi^2=1-(\sigma_y/\sigma_z)^2$$
 
 Here, we use $\sigma_z=\sigma$ and hence $\sigma_y = \sigma \sqrt{1-\xi^2}$. The rotor-averaged value of $W$ is
 
-$$\tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 \left(1+2\mathcal{P}_{\textrm{ns}} \right)-\frac{2\sigma_*^2}{R^2} e^{-R^2/(2\sigma_*^2)} \mathcal{P}_{\textrm{ns}} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)\right]\right)$$
+$$\tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 \left(1+2P_{\textrm{ns}} \right)-\frac{2\sigma_*^2}{R^2} e^{-R^2/(2\sigma_*^2)} P_{\textrm{ns}} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)\right]\right)$$
 
 where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. Multiple constants are included in this expression and are defined as
 - $\tan{\phi_\textrm{ns}} = 2\omega / (\xi^2 - \omega^2)$
@@ -36,7 +36,7 @@ where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. M
     =2\sigma^2(1-\xi^2) / (2+\omega^2-\xi^2)$
 - $\hat{\sigma}^{-2} = \sigma_*^{-2} + \sigma_\textrm{ns}^{-2}\cos{(2\delta-\phi_\textrm{ns})}$
 - $\lambda=R\sigma_\textrm{s}^2/\sigma_*^2$
-- $\mathcal{P}_{\textrm{ns}} = e^{-\chi_{\textrm{ns}}^2 \cos{\phi}} \cos{(\chi_{\textrm{ns}}^2 \sin{\phi})}-1$
+- $P_{\textrm{ns}} = e^{-\chi_{\textrm{ns}}^2 \cos{\phi}} \cos{(\chi_{\textrm{ns}}^2 \sin{\phi})}-1$
 - $\chi_{\textrm{ns}} = \rho \sigma_*^2/(2\sigma_\textrm{ns} \sigma_\textrm{s}^2)$
 
 The integral $\mu_0$ is 
