@@ -6,9 +6,9 @@ This repository contains a Python implementation of an analytical expression for
 
 ![wake](images/wake.png)
 
-For a set of axes $y_n$-$z_n$ placed at the center of the wake, the normalised wind-speed deficit here is defined as
+For a set of axes $y_n$ - $z_n$ placed at the center of the wake, the normalised wind-speed deficit here is defined as
 
-$$W = C\,e^{-(y_n+\omega z_n)^2/(2\sigma_y^2)} e^{-z_n^2/(2\sigma_z^2)}$$
+$$W = Ce^{-(y_n+\omega z_n)^2/(2\sigma_y^2)} e^{-z_n^2/(2\sigma_z^2)}$$
 
 where, 
 - $C$ is a streamwise scaling function
@@ -29,7 +29,7 @@ where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. M
 - $\phi=2\phi_\textrm{s}-\phi_\textrm{ns}$
 
 - $\sigma_\textrm{s}^2 = 
-    \sigma^2\left(1-\xi^2\right) \cos{\phi_\textrm{s}}\, / \, (\cos{\delta}+\omega\sin{\delta})$
+    \sigma^2\left(1-\xi^2\right) \cos{\phi_\textrm{s}} / (\cos{\delta}+\omega\sin{\delta})$
 - $\sigma_\textrm{ns}^2
     =2\sigma^2(1-\xi^2) / \sqrt{(\omega^2-\xi^2)^2+4\omega^2}$
 - $\sigma_*^2
@@ -49,7 +49,7 @@ $$\mu_0 = \frac{\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} \Psi(R,\rho,\sigma_\
 
 such that
 
-$$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2}\, I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} g_k(\tau^2)\right]$$
+$$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} g_k(\tau^2)\right]$$
 
 where $\tau = \rho\sigma_*/\sigma_\textrm{s}^2$ and $$f_k(\tau) = \frac{f_{k-1}(\tau) + \tau g_{k-1}(\tau)}{k}, \quad g_k(\tau) = \frac{f_{k}(\tau) + 2g_{k-1}(\tau)}{2k}$$
 with the initial conditions $f_0=1$, $g_0=0$.
