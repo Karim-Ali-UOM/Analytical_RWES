@@ -48,6 +48,7 @@ and is evaluated as
 ```math
 \mu_0 = \frac{\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} \Psi(R,\rho,\sigma_\textrm{s},\sigma_*)
 
+
 such that
 
 $$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[ \left(\frac{R^2}{2 \sigma_{*}^2} \right)^{k} g_k(\tau^2)\right]$$
