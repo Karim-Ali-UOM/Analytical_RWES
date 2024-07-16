@@ -21,7 +21,7 @@ $$\xi^2=1-(\sigma_y/\sigma_z)^2$$
 
 Here, we use $\sigma_z=\sigma$ and hence $\sigma_y = \sigma \sqrt{1-\xi^2}$. The rotor-averaged value of $W$ is
 
-$$\Tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 \left(1+2P_{\textrm{ns}} \right)-\frac{2\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} P_{\textrm{ns}} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)\right]\right)$$
+$$\tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 (1+2P_{\textrm{ns}})-\frac{2\sigma_*^2}{R^2} e^{-R^2 / (2\sigma_*^2)} P_{\textrm{ns}} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)\right] \right)$$
 
 where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. Multiple constants are included in this expression and are defined as
 - $\tan{\phi_\textrm{ns}} = 2\omega / (\xi^2 - \omega^2)$
@@ -49,9 +49,12 @@ $$\mu_0 = \frac{\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} \Psi(R,\rho,\sigma_\
 
 such that
 
-$$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} g_k(\tau^2)\right]$$
+$$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[ \left(\frac{R^2}{2 \sigma_{*}^2} \right)^{k} g_k(\tau^2)\right]$$
 
-where $\tau = \rho\sigma_{*}/\sigma_\textrm{s}^2$ and $$f_k(\tau) = \frac{f_{k-1}(\tau) + \tau g_{k-1}(\tau)}{k}, \quad g_k(\tau) = \frac{f_{k}(\tau) + 2g_{k-1}(\tau)}{2k}$$
+where $\tau = \rho\sigma_{*}/\sigma_\textrm{s}^2$ and 
+
+$$f_k(\tau) = \frac{f_{k-1}(\tau) + \tau g_{k-1}(\tau)}{k}, \quad g_k(\tau) = \frac{f_{k}(\tau) + 2g_{k-1}(\tau)}{2k}$$
+
 with the initial conditions $f_0=1$, $g_0=0$.
 
 ## Usage
