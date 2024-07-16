@@ -4,7 +4,7 @@ This repository contains a Python implementation of an analytical expression for
 
 ## Background
 
-![wake](images/wake.png)
+![wake](./images/wake.png)
 
 For a set of axes $y_n$ - $z_n$ placed at the center of the wake, the normalised wind-speed deficit here is defined as
 
@@ -53,7 +53,9 @@ and is evaluated as
 
 such that
 
-$$\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[ \left(\frac{R^2}{2 \sigma_{*}^2} \right)^{k} g_k(\tau^2)\right]$$
+```math
+\Psi(R,\rho,\sigma_\textrm{s},\sigma_*) = I_0 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1}  \left[\left(\frac{R^2}{2 \sigma_{*}^2}\right)^{k} f_k(\tau^2) \right] - \frac{R\rho}{\sigma_\textrm{s}^2} I_1 \left(\frac{R\rho}{\sigma_\textrm{s}^2}\right) \sum_{k\ge1} \left[ \left(\frac{R^2}{2 \sigma_{*}^2} \right)^{k} g_k(\tau^2)\right]
+```
 
 where $\tau = \rho\sigma_{*}/\sigma_\textrm{s}^2$ and 
 
