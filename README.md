@@ -45,7 +45,9 @@ $$\mu_0 = \int\limits_{0}^{1} \eta e^{-\eta^2 R^2/(2\sigma_{*}^2)} I_0 \left(\fr
 
 and is evaluated as
 
-$$\mu_0 = \frac{\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} \Psi(R,\rho,\sigma_\textrm{s},\sigma_{*})$$
+$$
+\mu_0 = \frac{\sigma_{*}^2}{R^2} e^{-R^2/(2\sigma_{*}^2)} \Psi(R,\rho,\sigma_\textrm{s},\sigma_*)
+$$
 
 such that
 
