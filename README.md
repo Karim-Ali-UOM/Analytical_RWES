@@ -4,7 +4,7 @@ This repository contains a Python implementation of an analytical expression for
 
 ## Background
 
-![wake](wake.png)
+![wake](./wake.png)
 
 For a set of axes $y_n$-$z_n$ placed at the center of the wake, the normalised wind-speed deficit here is defined as
 $$W = C\,e^{-(y_n+\omega z_n)^2/(2\sigma_y^2)} e^{-z_n^2/(2\sigma_z^2)}$$
@@ -16,12 +16,7 @@ where,
 The presented expression integrates the equation for $W$ across a circular disk, depicting the rotor of a downstream turbine, which is offset from the wake center by the radial distance $\rho$ and the angle $\delta$. Since, $\sigma_y$ and $\sigma_z$ are not equal in the general case that the wake source is a yawed turbine, the two standard deviations are related via the eccentricity $\xi$ such that $$\xi^2=1-(\sigma_y/\sigma_z)^2$$
 
 Here, we use $\sigma_z=\sigma$ and hence $\sigma_y = \sigma \sqrt{1-\xi^2}$. The rotor-averaged value of $W$ is
-$$\tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 \left(1+2\mathcal{P}_{\textrm{ns}} \right)-\frac{2\sigma_*^2}{R^2} e^{-R^2/(2\sigma_*^2)} \mathcal{P}_{\textrm{ns}}
-     \left[
-     \frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)
-     +
-     \frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)
-     \right]\right)$$
+$$\tilde{W} \approx 2C e^{-\rho^2/(2\hat{\sigma}^2)}\left(\mu_0 \left(1+2\mathcal{P}_{\textrm{ns}} \right)-\frac{2\sigma_*^2}{R^2} e^{-R^2/(2\sigma_*^2)} \mathcal{P}_{\textrm{ns}} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{R\rho}{\sigma_\textrm{s}^2}\right)\right]\right)$$
 
 where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. Multiple constants are included in this expression and are defined as
 - $\tan{\phi_\textrm{ns}} = 2\omega / (\xi^2 - \omega^2)$
