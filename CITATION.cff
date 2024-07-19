@@ -7,4 +7,10 @@ message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
-authors: [Karim Ali, Tim Stallard, Pablo Ouro]
+authors: 
+  - family-names: "Ali"
+    given-names: "Karim" 
+  - family-names: "Stallard"
+    given-names: "Tim" 
+  - family-names: "Ouro"
+    given-names: "Pablo" 
