@@ -41,6 +41,7 @@
 
 import numpy as np
 from scipy.special import i0, i1
+import math
 
 def anl_rews(gamma, rho, delta, xi, omega):
 
@@ -70,8 +71,8 @@ def anl_rews(gamma, rho, delta, xi, omega):
     tdelta = sdelta / cdelta                # tan
     
     # New introduced angles 
-    phi_ns = np.atan2(2.0 * omega, xi2 - o2)
-    phi_s = np.atan2(omega + one_m_xi2 * tdelta / (omega * tdelta + 1), 1)
+    phi_ns = math.atan2(2.0 * omega, xi2 - o2)
+    phi_s = math.atan2(omega + one_m_xi2 * tdelta / (omega * tdelta + 1), 1)
     phi = 2 * phi_s - phi_ns
     
     # New introduced length scales.
