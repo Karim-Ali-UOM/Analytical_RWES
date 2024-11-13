@@ -8,6 +8,7 @@ message: >-
   metadata from this file.
 type: software
 url: https://github.com/Karim-Ali-UOM/Analytical_RWES
+doi: 10.5281/zenodo.12784758
 authors: 
   - family-names: "Ali"
     given-names: "Karim" 
