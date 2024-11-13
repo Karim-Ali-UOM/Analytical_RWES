@@ -91,7 +91,7 @@ For a rectangular disk of side lengths $2L_y$ and $2L_z$ in the $y$ and $z$ dire
 which is simply evaluating the function $\Omega$ at the four vertices of the rectangular disk. The function $\Omega$ is defined as
 
 ```math
-\Omega(h,a,b) = \frac{1}{2\pi} \left(\arctan{(a)} -\arctan{(a+b/h)} - \arctan{\left(\frac{h+ab+a^2 h}{b}\right)}\right) + \frac{1}{4} \textrm{erf}\left(\frac{b}{\sqrt{2(1-a^2)}}\right) +  \textrm{T}(h,a+b/h) \\ &  \quad\quad\quad + \textrm{T}\left(\frac{b}{\sqrt{1+a^2}},\frac{h+ab+a^2h}{b}\right),
+\Omega(h,a,b) = \frac{1}{2\pi} \left(\arctan{(a)} -\arctan{(a+b/h)} - \arctan{\left(\frac{h+ab+a^2 h}{b}\right)}\right) + \frac{1}{4} \textrm{erf}\left(\frac{b}{\sqrt{2(1-a^2)}}\right) +  \textrm{T}(h,a+b/h)+ \textrm{T}\left(\frac{b}{\sqrt{1+a^2}},\frac{h+ab+a^2h}{b}\right),
 ```
 where $\textrm{T}(h,a)$ is [Owen's T function](https://en.wikipedia.org/wiki/Owen%27s_T_function), and erf is the [error function](https://en.wikipedia.org/wiki/Error_function).
 
