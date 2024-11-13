@@ -31,7 +31,7 @@ where $A$ is the area of the disk represnting the turbine.
 ## Circular disk representation of a turbine
 If the downstream tubine is to modelled as a ircular disk of radius $R$, then the rotor-averaged deficit is
 ```math
-\overline{W}^{(n)} \approx C e^{-\rho^2/(2\hat{\sigma}^2)}\left(2\mu_0^{(n)} (1+2P_{\textrm{ns}}^{(n)})-\frac{2\sigma_*^2}{nR^2} e^{-nR^2 / (2\sigma_*^2)} P_{\textrm{ns}}^{(ns)} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{nR\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{nR\rho}{\sigma_\textrm{s}^2}\right)\right] \right)^{1/n}
+\overline{W}_c^{(n)} \approx C e^{-\rho^2/(2\hat{\sigma}^2)}\left(2\mu_0^{(n)} (1+2P_{\textrm{ns}}^{(n)})-\frac{2\sigma_*^2}{nR^2} e^{-nR^2 / (2\sigma_*^2)} P_{\textrm{ns}}^{(ns)} \left[\frac{\lambda}{\rho} I_{1}\left(\frac{nR\rho}{\sigma_\textrm{s}^2}\right)+\frac{\lambda^2}{\rho^2} I_{2}\left(\frac{nR\rho}{\sigma_\textrm{s}^2}\right)\right] \right)^{1/n}
 ```
 
 where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. Multiple constants are included in this expression and are defined as
@@ -73,13 +73,52 @@ $$f_k(v) = \frac{f_{k-1}(v) + v g_{k-1}(v)}{k}, \quad g_k(v) = \frac{f_{k}(v) + 
 with the initial conditions $f_0=1$, $g_0=0$.
 
 ## Rectangular disk representation of a turbine
+An alternative approach to obtain the rotor-averaged deficit of a turbine is to model the rotor as a rectangular disk rather than a circular one. 
+
+Solving the resulting integrals for a rectangular is often easier than a circular domain, without the need of using simplifying assumptions.
+
+For a rectangular disk of side lengths $2L_y$ and $2L_z$ in the $y$ and $z$ dierctions, respectively, the rotor-averaged deficit is
+
+```math
+    \overbar{W}_r^{(n)} = C
+    \left(
+    \frac{\pi \sigma^2 \sqrt{1-\xi^2}}{2n  L_y L_z}
+    \sum\limits_{s_y, \, s_z \in \{-1,1\}}
+    (-s_y s_z)
+    \Omega\left(\frac{\Delta_z+ s_z L_z}{\sigma/\sqrt{n}}, \frac{\omega}{\sqrt{1-\xi^2}}, \frac{\Delta_y + s_y L_y}{\sigma\sqrt{(1-\xi^2)/n}}\right)
+    \right)^{1/n},
+```
+which is simplif evaluating the function $\Omega$ at the four vertices of the rectangular disk. The function $\Omega$ is defined as
+
+```math
+\Omega(h,a,b) = \frac{1}{2\pi} \left(\arctan{(a)} -\arctan{(a+b/h)} - \arctan{\left(\frac{h+ab+a^2 h}{b}\right)}\right) + \frac{1}{4} \textrm{erf}\left(\frac{b}{\sqrt{2(1-a^2)}}\right) +  \textrm{T}(h,a+b/h) \\ &  \quad\quad\quad + \textrm{T}\left(\frac{b}{\sqrt{1+a^2}},\frac{h+ab+a^2h}{b}\right),
+```
+where $\textrm{T}(h,a)$ is [Owen's T function](https://en.wikipedia.org/wiki/Owen%27s_T_function), and erf is the [error function](https://en.wikipedia.org/wiki/Error_function).
+
+The size of the rectangular disk is
+```math
+L_y = L_z = 0.9 R
+```
 
 ## Usage
 
 To use this function, include the following lines in your code:
 ```
 from REWS import anl_rews
-w_c = anl_rews(R, rho, delta, xi, omega)
+w_c = anl_rews(R, rho, delta, xi, omega, n, method)
 ```
 
-The function "anl_rews" takes in the radius "R" and the radial offset "rho" in a non-dimensional form by normalising the dimensional quantities by the wake standard deviation sigma. It then returns the rotor-averaged normalised deficit $\overline{W}$ referenced to the streamwise scaling function $C$ (i.e., $\overline{W}/C$).
+The function "anl_rews" takes in
+- the radius "R" and
+- the radial offset $\rho$ "rho"
+
+in a non-dimensional form by normalising the dimensional quantities by the wake standard deviation $\sigma$.
+
+It also takes in
+- the angle $\delta$ between the two turbines
+- the eccentricty $\xi$ of the wake elliptic contours
+- the veer coefficient $\omega$
+- [optional] the averaging order $n$, where the default value is one
+- [optional] the method of representing turbine, which is either "circular" or "rectangular" with a default value of "rectangular"
+
+It then returns the rotor-averaged deficit $\overline{W}$ normalised by the streamwise scaling function $C$ (i.e., $\overline{W}/C$).

@@ -47,7 +47,7 @@
 from scipy.special import i0, i1, owens_t, erf
 from math import sqrt, sin, cos, pi, sqrt, atan2, atan, exp
 
-def anl_rews(gamma, rho, delta, xi, omega, n = 1, method = "circular"):
+def anl_rews(gamma, rho, delta, xi, omega, n = 1, method = "rectangular"):
     if method == "circular":
         anl_rews_circular(gamma, rho, delta, xi, omega, n = n)
     elif method == "rectangular":
