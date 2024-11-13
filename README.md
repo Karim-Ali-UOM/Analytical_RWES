@@ -47,7 +47,7 @@ where $R$ is the radius of the turbine whose rotor-averaged deficit is sought. M
     =2\sigma^2(1-\xi^2) / (2+\omega^2-\xi^2)$
 - $\hat{\sigma}^{-2} = \sigma_{*}^{-2} + \sigma_\textrm{ns}^{-2}\cos{(2\delta-\phi_\textrm{ns})}$
 - $\lambda=R\sigma_\textrm{s}^2/\sigma_{*}^2$
-- $P^{(n)}_{\textrm{ns}} = e^{-n\chi_{\textrm{ns}}^2 \cos{\phi}} \cos{(n\chi_{\textrm{ns}}^2 \sin{\phi})}-1$
+- $P_{\textrm{ns}}^{(n)} = e^{-n \chi_{\textrm{ns}}^2 \cos{\phi}} \cos{(n \chi_{\textrm{ns}}^2 \sin{\phi})}-1$
 - $\chi_{\textrm{ns}} = \rho \sigma_{*}^2/(2\sigma_\textrm{ns} \sigma_\textrm{s}^2)$
 
 The integral $\mu_0^{(n)}$ is 
