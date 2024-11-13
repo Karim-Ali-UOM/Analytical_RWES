@@ -80,7 +80,7 @@ Solving the resulting integrals for a rectangular is often easier than a circula
 For a rectangular disk of side lengths $2L_y$ and $2L_z$ in the $y$ and $z$ directions, respectively, the rotor-averaged deficit is
 
 ```math
-    \overbar{W}_r^{(n)} = C
+    \overline{W}_r^{(n)} = C
     \left(
     \frac{\pi \sigma^2 \sqrt{1-\xi^2}}{2n  L_y L_z}
     \sum\limits_{s_y, \, s_z \in \{-1,1\}}
