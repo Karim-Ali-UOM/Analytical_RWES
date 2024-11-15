@@ -94,10 +94,12 @@ def anl_rews_rectangular(gamma_in, beta_in, delta, xi, omega, ly = 0.9, lz = 0.9
     
     # The generalised Owen T function is calculated at the four
     # vertices of the rectangular disk
-    t = + gen_owen_t(rho * sd - gz, a, (rho * cd + gy) / sqrt_om_xi2) \
-        - gen_owen_t(rho * sd + gz, a, (rho * cd + gy) / sqrt_om_xi2) \
-        - gen_owen_t(rho * sd - gz, a, (rho * cd - gy) / sqrt_om_xi2) \
-        + gen_owen_t(rho * sd + gz, a, (rho * cd - gy) / sqrt_om_xi2)
+    rhosd = rho * sd
+    rhocd = rho * cd
+    t = + gen_owen_t(rhosd - gz, a, (rhocd + gy) / sqrt_om_xi2) \
+        - gen_owen_t(rhosd + gz, a, (rhocd + gy) / sqrt_om_xi2) \
+        - gen_owen_t(rhosd - gz, a, (rhocd - gy) / sqrt_om_xi2) \
+        + gen_owen_t(rhosd + gz, a, (rhocd - gy) / sqrt_om_xi2)
     return (pi * sqrt_om_xi2 / (2 * gy * gz) * t)**(1 / n)
     
 def anl_rews_circular(gamma, rho, delta, xi, omega, n = 1):
@@ -209,6 +211,7 @@ def Psi(x, i00, ki11, tau_sq, ns, tol):
     return i00 * sum0 - ki11 * sum1
 
 def gen_owen_t(h,a,b):
-    return (atan(a) - atan(a + b / h) - atan((h + a * b + a * a * h) / b)) / (2 * pi) + \
-        0.25*erf(b / sqrt(2*(1 + a * a))) + owens_t(h,a + b / h) + \
-        owens_t(b / sqrt(1 + a * a), h / b + a + a * a * h / b)
+    q1 = a + b/h
+    q2 = (h + a*b + a*a*h) / b
+    return -(atan(q1) + atan(q2)) / (2 * pi) + \
+        owens_t(h, q1) + owens_t(b / sqrt(1 + a * a), q2)
