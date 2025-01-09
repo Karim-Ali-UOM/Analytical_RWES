@@ -97,7 +97,7 @@ where $\textrm{T}(h,a)$ is [Owen's T function](https://en.wikipedia.org/wiki/Owe
 
 The size of the rectangular disk is
 ```math
-L_y = L_z = 0.9 R
+L_y = L_z = \frac{\sqrt{\pi}}{2} R
 ```
 
 ## Usage
