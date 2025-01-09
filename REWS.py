@@ -49,11 +49,12 @@ from math import sqrt, sin, cos, pi, sqrt, atan2, atan, exp
 
 def anl_rews(gamma, rho, delta, xi, omega, n = 1, method = "rectangular"):
     if method == "circular":
-        anl_rews_circular(gamma, rho, delta, xi, omega, n = n)
+        rews = anl_rews_circular(gamma, rho, delta, xi, omega, n = n)
     elif method == "rectangular":
-        anl_rews_rectangular(gamma, rho, delta, xi, omega, n = n)
-        
-def anl_rews_rectangular(gamma_in, beta_in, delta, xi, omega, ly = 0.9, lz = 0.9, n = 1):
+        rews = anl_rews_rectangular(gamma, rho, delta, xi, omega, n = n)
+    return rews
+    
+def anl_rews_rectangular(gamma_in, beta_in, delta, xi, omega, ly = 0.88623, lz = 0.88623, n = 1):
     
     # ly: the ratio between the side length of the rectangular disk in y direction and the
     #     the actual radius of the turbine
@@ -211,6 +212,10 @@ def Psi(x, i00, ki11, tau_sq, ns, tol):
     return i00 * sum0 - ki11 * sum1
 
 def gen_owen_t(h,a,b):
+    # Safe check against dividing by 0
+    if(b==0): b = 0.001
+    if(h==0): h = 0.001
+        
     q1 = a + b/h
     q2 = (h + a*b + a*a*h) / b
     return -(atan(q1) + atan(q2)) / (2 * pi) + \
